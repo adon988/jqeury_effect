@@ -9,6 +9,11 @@
   z-index: 1;
 }
 
+.flip_number{
+  display: none;
+}
+
+
 /**** Isotope CSS3 transitions ****/
 
 .isotope,
