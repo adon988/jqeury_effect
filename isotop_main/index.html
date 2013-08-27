@@ -20,12 +20,16 @@
     <script src="js/jquery.flippy.min.js"></script>
     <script src="js/jquery.flippy.function.js"></script>
     <![endif]-->
+    <!--[if !(gte IE 10)]>
+    <script src="js/jquery.flippy.ie9.function.js"></script>
+    <![endif]-->
   <!--#Flippy-->
 <!--#液態+翻轉效果JS-->
+<!--effect by Adam-->
 
 </head>
 <body class="homepage ">
-
+<input type="button" onclick="box_animate()" value="效果">
 
   <!--篩選選單-->
   <section id="options" class="clearfix">
@@ -46,20 +50,19 @@
   <!--主要內容-->
   <div id="container">     
         
-            
-      <div class="element filter_boy filter_hot"><!--分類-->
+      <div class="element filter_boy"><!--分類-->
 
-          <p class="flip_number">2<!--排序--></p>
-        
+          <p class="flip_number">3<!--排序--></p>
+          
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>Hello</h3>
+            <div class="flip_up_content">Quick Flip</div>
             <img src="http://www.sunmoonlake.gov.tw/FileDownLoad/Album/Small/2013012815061200046.jpg" width="200">
-            <p class="weight">238.02891</p>
+            <p class="flip_down_content">238.02891</p>
           </div>
+
       </div>
-      
-        
+
             
       <div class="element filter_boy"><!--分類-->
 
@@ -67,9 +70,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>abc</h3>
+            <div class="flip_up_content">abc</div>
             <img src="http://farm4.staticflickr.com/3739/9363374969_0ff951699c_o.jpg" width="200">
-            <p class="weight">abc</p>
+            <p class="flip_down_content">abc</p>
           </div>
 
       </div>
@@ -82,9 +85,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>Y</h3>
+            <div class="flip_up_content">Y</div>
             <img src="http://www.wall001.com/nature/TREE_PHOTOGRAPHY/mxxx01/wall001.com_photography_FF117.jpg" width="200">
-            <p class="weight">88.90585</p>
+            <p class="flip_down_content">88.90585</p>
           </div>
 
       </div>
@@ -97,9 +100,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>B</h3>
+            <div class="flip_up_content">B</div>
             <img src="http://ts1.mm.bing.net/th?id=H.4770820716363976&pid=15.1" width="200">
-            <p class="weight">10.811</p>
+            <p class="flip_down_content">10.811</p>
           </div>
 
       </div>
@@ -110,9 +113,9 @@
         
         <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="https://sphotos-b-ord.xx.fbcdn.net/hphotos-prn2/p480x480/1175503_620307831323157_1732552434_n.jpg" width="200">
-            <p>Reveal</p>
+            <p class="flip_down_content">Reveal</p>
         </div>
       </div>
     
@@ -122,9 +125,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="http://rs.sinahk.net/hd/2013/01/11/30939_627164_212522.jpg" width="200">
-            <p>Captivating</p>
+            <p class="flip_down_content">Captivating</p>
           </div>
 
       </div>
@@ -136,9 +139,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>Mg</h3>
+            <div class="flip_up_content">Mg</div>
             <img src="http://static3.depositphotos.com/1003595/163/v/950/depositphotos_1637814-Celebration-banner.jpg" width="200">
-            <p class="weight">24.305</p>
+            <p class="flip_down_content">24.305</p>
           </div>
 
       </div>
@@ -150,9 +153,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ103E4Oc6AyCvQgieemJA12_9n9En9gjNvV6d_368DIpCMr2OR" width="200">
-            <p>Progressively</p>
+            <p class="flip_down_content">Progressively</p>
           </div>
 
       </div>
@@ -163,9 +166,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
-            <p>Sort</p>
+            <p class="flip_down_content">Sort</p>
           </div>
 
       </div>
@@ -176,9 +179,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
-            <p>Sort</p>
+            <p class="flip_down_content">Sort</p>
           </div>
 
       </div>
@@ -189,9 +192,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
-            <p>Soee3rt</p>
+            <p class="flip_down_content">Soee3rt</p>
           </div>
 
       </div>
@@ -202,9 +205,9 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
-            <p>Soasert</p>
+            <p class="flip_down_content">Soasert</p>
           </div>
 
       </div>
@@ -215,9 +218,10 @@
           
           <div class="flip_names">
             <!--以下為內容-->
-            <h3>hello</h3>
+            <div class="flip_up_content">hello</div>
             <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
-            <p>asd</p>
+            
+            <p class="flip_down_content">asd</p>
           </div>
 
       </div>
