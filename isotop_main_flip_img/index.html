@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Little Monni</title>
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  
+  <style>
+  .filter_boy{
+    background-color: red;
+    margin-top:10px;
+  }
+  .filter_girl{
+    background-color: blue;
+    margin-top:10px;
+  }
+  .element{
+    width:200px;
+  }
+  </style>
+
+  <script src="js/jquery.min.js"></script>
+
+  <!--isotop--> 
+    <link rel="stylesheet" href="css/isotope.style.css" />
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.isotope.function.js"></script>
+  <!--isotop [end]-->
+
+  <!--Flippy-->
+    <script src="js/jquery.flippy.min.js"></script>
+    <script>
+        
+        $(function(){
+
+            var flip_randoms = function(){
+              var element_length = $(".element").length - 1;
+              var element_random_target = Math.floor(Math.random()*element_length);
+
+              $(".element").eq(element_random_target).find('img').stop().flippy({
+                  duration: "1000",
+                  onFinish : function(){setTimeout("flip_randoms2();",3000)}
+
+              });
+            }; 
+            flip_randoms2 = function(){
+              flip_randoms();
+            }
+            flip_randoms();  
+
+            
+        }) 
+
+    </script>
+  <!--Flippy [end]-->
+
+</head>
+<body class="homepage ">
+  
+  <!--篩選選單-->
+  <section id="options" class="clearfix">
+    <div class="option-combo">
+      <h2>Filter:</h2>
+      <ul id="filter" class="option-set clearfix" data-option-key="filter">
+        <li><a href="#show-all" data-option-value="*" class="selected">show all</a></li>
+        <li><a href="#filter_boys" data-option-value=".filter_boy">filter_boys</a></li>
+        <li><a href="#filter_boys2" data-option-value=".filter_girl">filter_boys2</a></li>
+        
+      </ul>
+    </div>
+  </section>
+  <!--篩選選單 [end]-->
+
+  <!--主要內容-->
+  <div id="container" class="super-list variable-sizes clearfix">     
+        
+            
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">2</p>
+          <h3 class="symbol">U</h3>
+          <h2 class="name">
+              <img src="http://www.sunmoonlake.gov.tw/FileDownLoad/Album/Small/2013012815061200046.jpg" width="200">
+          </h2>
+          <p class="weight">238.02891</p>
+        </span>
+      </div>
+      
+        
+            
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">3</p>
+          <h3 class="symbol">abc</h3>
+          <h2 class="name">
+            <img src="http://farm4.staticflickr.com/3739/9363374969_0ff951699c_o.jpg" width="200">
+          </h2>
+          <p class="weight">abc</p>
+        </span>
+      </div>
+      
+        
+            
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">4</p>
+          <h3 class="symbol">Y</h3>
+          <h2 class="name">
+            <img src="http://www.wall001.com/nature/TREE_PHOTOGRAPHY/mxxx01/wall001.com_photography_FF117.jpg" width="200">
+          </h2>
+          <p class="weight">88.90585</p>
+        </span>
+      </div>
+      
+        
+            
+      <div class="element element filter_girl">
+        <span class="element_flip_box">
+          <p class="number">5</p>
+          <h3 class="symbol">B</h3>
+          <h2 class="name">
+            <img src="http://www.tyccc.gov.tw/_admin/_upload/news/news/6909/photo/%E9%9B%B2%E9%96%80%E8%88%9E%E9%9B%86%EF%BC%92%E6%96%B7%E7%AB%A0%E5%8A%87%E7%85%A7(%E6%94%9D%E5%BD%B1%E5%8A%89%E6%8C%AF%E7%A5%A5).jpg" width="200">
+          </h2>
+          <p class="weight">10.811</p>
+        </span>
+      </div>
+    
+      <div class="element filter_boy">
+        <p class="number">6</p>
+        <h3 class="symbol"><img src="https://sphotos-b-ord.xx.fbcdn.net/hphotos-prn2/p480x480/1175503_620307831323157_1732552434_n.jpg" width="200"></h3>
+        <h2 class="name">Reveal</h2>
+      </div>
+    
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">7</p>
+          <h3 class="symbol">
+            <img src="http://rs.sinahk.net/hd/2013/01/11/30939_627164_212522.jpg" width="200">
+          </h3>
+          <h2 class="name">Captivating</h2>
+        </span>
+      </div>
+    
+
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">1</p>
+          <h3 class="symbol">Mg</h3>
+          <h2 class="name">
+            <img src="http://www.dcplayer.com.tw/uploads/editor/%5B%E6%B4%BB%E5%8B%95%E5%B0%88%E9%A0%81%5D%E5%A4%A2%E5%B9%BB%E9%A2%A8%E6%99%AF%E9%80%B2%E9%9A%8E%E6%94%9D%E5%BD%B1%E6%8A%80%E5%B7%A72_7_11_600.jpg" width="200">
+          </h2>
+          <p class="weight">24.305</p>
+        </span>
+      </div>
+
+
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">8</p>
+          <h3 class="symbol"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ103E4Oc6AyCvQgieemJA12_9n9En9gjNvV6d_368DIpCMr2OR" width="200"></h3>
+          <h2 class="name">Progressively</h2>
+        </span>
+      </div>
+    
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">9</p>
+          <h3 class="symbol">
+            <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
+          </h3>
+          <h2 class="name">Sort</h2>
+        </span>
+      </div>
+
+      <div class="element filter_boy">
+        <span class="element_flip_box">
+          <p class="number">9</p>
+          <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+          <h2 class="element name">Sort</h2>
+        </span>
+      </div>
+
+      <div class="element filter_girl">
+        <span class="element_flip_box">
+          <p class="number">10</p>
+          <h3 class="symbol">
+            <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
+          </h3>
+          <h2 class="name">Soee3rt</h2>
+        </span>
+      </div>
+
+      <div class="element filter_girl">
+        <span class="element_flip_box">
+          <p class="number">11</p>
+          <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+          <h2 class="name">Soasert</h2>
+        </span>
+      </div>
+
+      <div class="element filter_girl">
+        <span class="element_flip_box">
+          <p class="number">12</p>
+          <h3 class="symbol">
+            <img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200">
+          </h3>
+          <h2 class="name">asd</h2>
+        </span>
+      </div>
+
+
+  </div>
+
+     
+  </section> <!-- #content -->
+  <!--主要內容 [end]-->
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Isotope</title>
+  
+  <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- scripts at bottom of page -->
+
+  <style>
+  .feature{
+    background-color: red;
+    margin-top:10px;
+  }
+  .feature2{
+    background-color: blue;
+    margin-top:10px;
+  }
+
+  .element{
+    background-color:yellow;
+    margin-top:10px;
+  }
+
+
+  </style>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!--isotop js--> 
+  <script src="jquery.isotope.min.js"></script>
+  <script>
+    $(function(){
+    
+      var $container = $('#container');
+    
+      $container.isotope({
+        masonry: {
+          columnWidth: 120
+        },
+        sortBy: 'number',
+        getSortData: {
+          number: function( $elem ) {
+            var number = $elem.hasClass('element') ? 
+              $elem.find('.number').text() :
+              $elem.attr('data-number');
+            return parseInt( number, 10 );
+          },
+          alphabetical: function( $elem ) {
+            var name = $elem.find('.name'),
+                itemText = name.length ? name : $elem;
+            return itemText.text();
+          }
+        }
+      });
+    
+      
+      var $optionSets = $('#options .option-set'),
+          $optionLinks = $optionSets.find('a');
+
+      $optionLinks.click(function(){
+        var $this = $(this);
+        // don't proceed if already selected
+        if ( $this.hasClass('selected') ) {
+          return false;
+        }
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
+  
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+            key = $optionSet.attr('data-option-key'),
+            value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[ key ] = value;
+        if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+          // changes in layout modes need extra logic
+          changeLayoutMode( $this, options )
+        } else {
+          // otherwise, apply new options
+          $container.isotope( options );
+        }
+        return false;
+      });
+
+    });
+  </script>
+  <!--isotop js [end]-->
+
+
+
+</head>
+<body class="homepage ">
+  
+  <!--篩選選單-->
+  <section id="options" class="clearfix">
+    <div class="option-combo">
+      <h2>Filter:</h2>
+      <ul id="filter" class="option-set clearfix" data-option-key="filter">
+        <li><a href="#show-all" data-option-value="*" class="selected">show all</a></li>
+        <li><a href="#elements" data-option-value=".element:not(.feature)">elements</a></li>
+        <li><a href="#features" data-option-value=".feature">features</a></li>
+        <li><a href="#features2" data-option-value=".feature2">features2</a></li>
+        
+      </ul>
+    </div>
+  </section>
+  <!--篩選選單 [end]-->
+
+  <!--主要內容-->
+  <div id="container" class="super-list variable-sizes clearfix">
+            
+      <div class="element">
+        <p class="number">1</p>
+        <h3 class="symbol">Mg</h3>
+        <h2 class="name"><img src="http://www.dcplayer.com.tw/uploads/editor/%5B%E6%B4%BB%E5%8B%95%E5%B0%88%E9%A0%81%5D%E5%A4%A2%E5%B9%BB%E9%A2%A8%E6%99%AF%E9%80%B2%E9%9A%8E%E6%94%9D%E5%BD%B1%E6%8A%80%E5%B7%A72_7_11_600.jpg" width="200"></h2>
+        <p class="weight">24.305</p>
+      </div>
+      
+        
+            
+      <div class="element">
+        <p class="number">2</p>
+        <h3 class="symbol">U</h3>
+        <h2 class="name"><img src="http://www.sunmoonlake.gov.tw/FileDownLoad/Album/Small/2013012815061200046.jpg" width="200"></h2>
+        <p class="weight">238.02891</p>
+      </div>
+      
+        
+            
+      <div class="element">
+        <p class="number">3</p>
+        <h3 class="symbol">abc</h3>
+        <h2 class="name"><img src="http://farm4.staticflickr.com/3739/9363374969_0ff951699c_o.jpg" width="200"></h2>
+        <p class="weight">abc</p>
+      </div>
+      
+        
+            
+      <div class="element">
+        <p class="number">4</p>
+        <h3 class="symbol">Y</h3>
+        <h2 class="name"><img src="http://www.wall001.com/nature/TREE_PHOTOGRAPHY/mxxx01/wall001.com_photography_FF117.jpg" width="200"></h2>
+        <p class="weight">88.90585</p>
+      </div>
+      
+        
+            
+      <div class="element">
+        <p class="number">5</p>
+        <h3 class="symbol">B</h3>
+        <h2 class="name"><img src="http://www.tyccc.gov.tw/_admin/_upload/news/news/6909/photo/%E9%9B%B2%E9%96%80%E8%88%9E%E9%9B%86%EF%BC%92%E6%96%B7%E7%AB%A0%E5%8A%87%E7%85%A7(%E6%94%9D%E5%BD%B1%E5%8A%89%E6%8C%AF%E7%A5%A5).jpg" width="200"></h2>
+        <p class="weight">10.811</p>
+      </div>
+    
+      <div class="feature">
+        <p class="number">6</p>
+        <h3 class="symbol"><img src="https://sphotos-b-ord.xx.fbcdn.net/hphotos-prn2/p480x480/1175503_620307831323157_1732552434_n.jpg" width="200"></h3>
+        <h2 class="name">Reveal</h2>
+      </div>
+    
+      <div class="feature">
+        <p class="number">7</p>
+        <h3 class="symbol"><img src="http://rs.sinahk.net/hd/2013/01/11/30939_627164_212522.jpg" width="200"></h3>
+        <h2 class="name">Captivating</h2>
+      </div>
+    
+      <div class="feature">
+        <p class="number">8</p>
+        <h3 class="symbol"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ103E4Oc6AyCvQgieemJA12_9n9En9gjNvV6d_368DIpCMr2OR" width="200"></h3>
+        <h2 class="name">Progressively</h2>
+      </div>
+    
+      <div class="feature">
+        <p class="number">9</p>
+        <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+        <h2 class="name">Sort</h2>
+      </div>
+
+      <div class="feature">
+        <p class="number">9</p>
+        <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+        <h2 class="name">Sort</h2>
+      </div>
+
+      <div class="feature2">
+        <p class="number">10</p>
+        <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+        <h2 class="name">Soee3rt</h2>
+      </div>
+
+      <div class="feature2">
+        <p class="number">11</p>
+        <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+        <h2 class="name">Soasert</h2>
+      </div>
+
+      <div class="feature2">
+        <p class="number">12</p>
+        <h3 class="symbol"><img src="http://news.xinhuanet.com/tech/2011-11/29/177081356409041423951n.jpg" width="200"></h3>
+        <h2 class="name">asd</h2>
+      </div>
+
+
+  </div>
+
+     
+  </section> <!-- #content -->
+  <!--主要內容 [end]-->
+
+</body>
+</html>
